@@ -1,0 +1,46 @@
+<form [formGroup]="userForm">
+   <h3> informations générales</h3>
+      
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Your name</mat-label>
+        <input matInput placeholder="Placeholder"  formControlName="firstName">
+    
+      </mat-form-field>
+    </p>
+    
+
+  <br>
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com"  formControlName="email" required>
+      <mat-error *ngIf="userForm.controls.email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+
+<div>
+   <h3> informations personelles </h3>
+   <label>
+    Types de cartes:
+    <input type="text" formControlName="cardtype">
+  </label>
+<br>
+  <label>
+    numéro de la carte:
+    <input type="number" formControlName="cardnum">
+  </label>
+  <br>
+  <label>
+    Date d'éxpiration:
+    <input type="date" formControlName="expiration">
+  </label>
+<br>
+  <label>
+    Code:
+    <input type="number" formControlName="code">
+  </label>
+
+</div>
+  </form>
+  <button type="submit" (click)='onSubmit()'>Submit</button>

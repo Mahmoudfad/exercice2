@@ -1,0 +1,10 @@
+<p>name : {{name}}</p>
+<p>email : {{email}}</p>
+<p>address : {{address}}</p>
+<div *ngIf="show">
+   
+hobbies:<ul *ngFor="let hobbie of hobbies; let i=index">
+    <li>{{ hobbie }}</li> <button (click)='delete(i)'>delete</button>
+</ul>
+</div>
+<button (click)='changeStatus()'>{{ myButton }}</button>
