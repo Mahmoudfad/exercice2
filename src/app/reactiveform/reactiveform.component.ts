@@ -14,10 +14,10 @@ userForm : FormGroup
     this.userForm= new FormGroup({
       firstName: new FormControl(''),
       email: new FormControl('', [Validators.required, Validators.email]),
-      cardtype: new FormControl(''),
-      cardnum: new FormControl(''),
-      expiration: new FormControl(''),
-      code: new FormControl(''),
+    //   cardtype: new FormControl(''),
+    //   cardnum: new FormControl(''),
+    //   expiration: new FormControl(''),
+    //   code: new FormControl(''),
     });
   }
   onSubmit() {

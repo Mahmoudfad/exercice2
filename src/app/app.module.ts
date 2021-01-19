@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,17 +20,16 @@ import { MatInputModule } from '@angular/material/input';
     AreaComponent,
     UserComponent,
     ArticlesComponent,
+    ReactiveformComponent,
     
   ],
   imports: [
     BrowserModule, 
     FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
-    ReactiveformComponent,
     MatFormFieldModule,
     MatInputModule,
-    
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
