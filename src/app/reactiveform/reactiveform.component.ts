@@ -12,14 +12,16 @@ userForm : FormGroup
   
   ngOnInit(): void {
     this.userForm= new FormGroup({
-      firstName: new FormControl(''),
-      email: new FormControl('', [Validators.required, Validators.email]),
-    //   cardtype: new FormControl(''),
-    //   cardnum: new FormControl(''),
-    //   expiration: new FormControl(''),
-    //   code: new FormControl(''),
+      firstName: new FormControl('',[ Validators.required,Validators.minLength(3)]),
+      email: new FormControl('',  Validators.required),
+      cardtype: new FormControl('',Validators.required),
+      cardnum: new FormControl('', Validators.minLength(16)),
+      expiration: new FormControl(''),
+      code: new FormControl(''),
+   
     });
   }
+  
   onSubmit() {
     // TODO: Use EventEmitter with form value
    

@@ -1,17 +1,57 @@
 <form [formGroup]="userForm" >
-<p>
-  <mat-form-field appearance="legacy">
+<h3>informations personelles</h3>
+  
+    <!-- <div *ngIf="userForm.controls.firstName.errors.minlength">
+      Name must be at least 4 characters long.
+     -->
+     
+  <mat-form-field appearance="fill">
     <mat-label>Nom</mat-label>
     <input matInput placeholder="Votre nom" formControlName="firstName">
+    <mat-error *ngIf="userForm.controls.firstName.invalid">nom est obligatoire</mat-error>
+    <mat-error *ngIf="userForm.controls.firstName.errors.minlength">min lenght</mat-error>
   </mat-form-field>
-</p>
 
+<!-- </div> -->
 
+<div class="example-container">
   <mat-form-field appearance="fill">
     <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" formControlName="email" required>  
+    <input matInput placeholder="pat@example.com" formControlName="email" >
+    <mat-error *ngIf="userForm.controls.email.invalid">email est obligatoire</mat-error>
   </mat-form-field>
+</div>
+
+<h3>informations du payemements</h3>
+
+<mat-form-field appearance="fill">
+  <mat-label>types de la carte</mat-label>
+  <input matInput formControleName="cardtype" placeholder="type">
+  <mat-error *ngIf="userForm.controls.cardtype.invalid">type est obligatoire</mat-error>
+</mat-form-field>
 
 
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>numéro de la carte</mat-label>
+    <input matInput type="" placeholder="carte" formControlName="cardnum" >
+    <!-- <mat-error *ngIf="userForm.controls.cardnum.errors.minlength">min lenght</mat-error> -->
+  </mat-form-field>
+</div>
+
+<mat-form-field appearance="fill">
+  <mat-label>date d'expiration</mat-label>
+  <input matInput formControleName="expiration" placeholder="date d'expiration" type="date">
+</mat-form-field>
+
+<br>
+
+<mat-form-field appearance="fill">
+  <mat-label>code</mat-label>
+  <input matInput formControleName="code" placeholder="code" type="password">
+</mat-form-field>
+
+
+<br>
   <button type="submit" (click)='onSubmit()'>Submit</button>
 </form>
